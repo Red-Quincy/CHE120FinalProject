@@ -3,7 +3,6 @@ import random
 
 def drawBoard(board):
        # This function prints out the board that it was passed.
-       #WOW! CAN YOU EUIEHKDWAWDAGHKGHKEFSGHEFAkj
        # "board" is a list of 10 strings representing the board (ignore index 0).
       print(board[7] + '|' + board[8] + '|' + board[9])
       print('-+-+-')
@@ -16,7 +15,7 @@ def inputPlayerLetter():
       letter = ''
       while not (letter == 'X' or letter == 'O'):
           print('Do you want to be X or O?')
-          letter = input().upper()
+          letter = input().upper() # Formats the user input to be uppercase so that the program can properly compare values (QW)
 
       # The first element in the list is the player's letter; the second is the computer's letter.
       if letter == 'X':
@@ -36,17 +35,15 @@ def makeMove(board, letter, move):
 def isWinner(bo, le):
       # Given a board and a player's letter, this function returns True if that player has won.
       # We use "bo" instead of "board" and "le" instead of "letter" so we don't have to type as much.
-      return ((bo[7] == le and bo[8] == le and bo[9] == le) or # Across the
-           top
+      return ((bo[7] == le and bo[8] == le and bo[9] == le) or # Across the top
       (bo[4] == le and bo[5] == le and bo[6] == le) or # Across the middle
       (bo[1] == le and bo[2] == le and bo[3] == le) or # Across the bottom
       (bo[7] == le and bo[4] == le and bo[1] == le) or # Down the left side
       (bo[8] == le and bo[5] == le and bo[2] == le) or # Down the middle
-      (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right
-           side
+      (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
       (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
       (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
-
+      #This is accounting for all possible win scenarios for the plater (QW)
 def getBoardCopy(board):
       # Make a copy of the board list and return it.
       boardCopy = []
@@ -123,13 +120,13 @@ def isBoardFull(board):
      return True
 
 
-print('Welcome to Tic-Tac-Toe!')
+print('Welcome to Tic-Tac-Toe!') #This is the "start" of the program. Everything up to this point has been defining functions that will be used throughout the course of the game (QW)
 
 while True:
  # Reset the board.
- theBoard = [' '] * 10
- playerLetter, computerLetter = inputPlayerLetter()
- turn = whoGoesFirst()
+ theBoard = [' '] * 10 #theBoard is a list of 10 empty spots (they're not actually empty, they still have the quotations but the quotations surround an empty spot) (QW)
+ playerLetter, computerLetter = inputPlayerLetter() #Since inputPlayerLetter will return two values, the program assigns the users letter as the first value and the computers letter as the second (QW)
+ turn = whoGoesFirst() #Calls the function used to randomly assign the start player. Line 130 informs the user who the assigned start player was.(QW)
  print('The ' + turn + ' will go first.')
  gameIsPlaying = True
 
@@ -168,6 +165,6 @@ while True:
      break
     else:
      turn = 'player'
- print('Do you want to play again? (yes or no)')
- if not input().lower().startswith('y'):
-  break
+ print('Do you want to play again? (yes or no)') 
+ if not input().lower().startswith('y'): #If no, run line 170. If yes, restart the loop and resume the game(QW)
+  break #Breaks the while gameIsPlaying loop, this ending the game (QW)
