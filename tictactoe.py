@@ -1,5 +1,5 @@
  # Tic-Tac-Toe
-import random
+import random  #random is a package, the random value package, we have decleare this if we want to import the random package 
 
 def drawBoard(board):
        # This function prints out the board that it was passed.
