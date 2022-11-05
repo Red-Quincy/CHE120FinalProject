@@ -1,5 +1,5 @@
  # Tic-Tac-Toe
-import random
+import random  #random is a package, the random value package, we have decleare this if we want to import the random package (RW) 
 
 def drawBoard(board):
        # This function prints out the board that it was passed.
@@ -25,9 +25,9 @@ def inputPlayerLetter():
 def whoGoesFirst():
       # Randomly choose which player goes first.
       if random.randint(0, 1) == 0:
-          return 'computer'
+          return 'computer'                              #Return the turn to computere. Computer plays first. (RW)
       else:
-          return 'player'
+          return 'player'                                #Else returns the turn to the player. Player plays first. (RW)
 
 def makeMove(board, letter, move):
       board[move] = letter
