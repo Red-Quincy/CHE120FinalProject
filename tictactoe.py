@@ -4,7 +4,7 @@ import random  #random is a package, the random value package, we have decleare 
 def drawBoard(board):
        # This function prints out the board that it was passed.
        # "board" is a list of 10 strings representing the board (ignore index 0).
-      print(board[7] + '|' + board[8] + '|' + board[9])
+      print(board[7] + '|' + board[8] + '|' + board[9]) #Each board[*] represents a spot on the tictactoe board. Currently, they are just empty spaces but will eventually correspond to a move made by the player/computer (QW)
       print('-+-+-')
       print(board[4] + '|' + board[5] + '|' + board[6])
       print('-+-+-')
@@ -29,8 +29,8 @@ def whoGoesFirst():
       else:
           return 'player'                                #Else returns the turn to the player. Player plays first. (RW)
 
-def makeMove(board, letter, move):
-      board[move] = letter
+def makeMove(board, letter, move): 
+      board[move] = letter #Recall: board is the section of the tictactoe board. Here, that section is being assigned to the move (QW)
 
 def isWinner(bo, le):
       # Given a board and a player's letter, this function returns True if that player has won.
@@ -43,7 +43,7 @@ def isWinner(bo, le):
       (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
       (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
       (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
-      #This is accounting for all possible win scenarios for the plater (QW)
+      #This is accounting for all possible win scenarios for the player (QW)
 def getBoardCopy(board):
       # Make a copy of the board list and return it.
       boardCopy = []
@@ -58,9 +58,9 @@ def isSpaceFree(board, move):
 def getPlayerMove(board):
       # Let the player enter their move.
       move = ' '
-      while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
+      while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)): #The while loop will only break once 1-9 has been selected, and only if the space is freee (QW)
           print('What is your next move? (1-9)')
-          move = input()
+          move = input() #The integer assigned to move is where the player is making their move (QW)
       return int(move)
 
 def chooseRandomMoveFromList(board, movesList):
@@ -133,21 +133,21 @@ while True:
  while gameIsPlaying:
   if turn == 'player':
    # Player's turn
-   drawBoard(theBoard)
-   move = getPlayerMove(theBoard)
-   makeMove(theBoard, playerLetter, move)
+   drawBoard(theBoard) #Draw out the board, with empty slots for each section (QW)
+   move = getPlayerMove(theBoard) #Get the move from the player (QW)
+   makeMove(theBoard, playerLetter, move) #Draw the board according to the move (QW)
 
-   if isWinner(theBoard, playerLetter):
+   if isWinner(theBoard, playerLetter): #check if the player won the game (QW)
     drawBoard(theBoard)
     print('Hooray! You have won the game!')
     gameIsPlaying = False
    else:
-    if isBoardFull(theBoard):
+    if isBoardFull(theBoard): #Check if the board is full, and thus a tie (QW)
      drawBoard(theBoard)
      print('The game is a tie!')
      break
     else:
-     turn = 'computer'
+     turn = 'computer' #If you haven't won nor is the game a tie, pass the turn to the computer (QW)
 
   else:
    # Computer's turn
