@@ -44,6 +44,10 @@ def isWinner(bo, le):
       (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
       (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
       #This is accounting for all possible win scenarios for the player (QW)
+    #RAY ^^^^^^^^^^
+    
+    
+    
 def getBoardCopy(board):
       # Make a copy of the board list and return it.
       boardCopy = []
@@ -76,7 +80,7 @@ def chooseRandomMoveFromList(board, movesList):
       else:
           return None
 
-def getComputerMove(board, computerLetter):
+def getComputerMove(board, computerLetter): # THIS SPECIFIC FUNCTION IS XIUWEN
       # Given a board and the computer's letter, determine where to move and return that move.
  if computerLetter == 'X':
           playerLetter = 'O'
@@ -110,7 +114,7 @@ def getComputerMove(board, computerLetter):
   return 5
 
      # Move on one of the sides.
-  return chooseRandomMoveFromList(board, [2, 4, 6, 8])
+  return chooseRandomMoveFromList(board, [2, 4, 6, 8]) #THIS IS THE END OF XIUWEN's PART
 
 def isBoardFull(board):
      # Return True if every space on the board has been taken. Otherwise, return False.
@@ -130,6 +134,9 @@ while True:
  print('The ' + turn + ' will go first.')
  gameIsPlaying = True
 
+ 
+ #
+ # QUINN \/\/\/\/\/\/
  while gameIsPlaying:
   if turn == 'player':
    # Player's turn
