@@ -140,25 +140,26 @@ while True:
  while gameIsPlaying:
   if turn == 'player':
    # Player's turn
-   drawBoard(theBoard) #Draw out the board, with empty slots for each section (QW)
+   drawBoard(theBoard) #Draw out the board, empty at the start, then pieces will start to be filled by player/computer moves (QW)
    move = getPlayerMove(theBoard) #Get the move from the player (QW)
    makeMove(theBoard, playerLetter, move) #Draw the board according to the move (QW)
 
    if isWinner(theBoard, playerLetter): #check if the player won the game (QW)
-    drawBoard(theBoard)
+    drawBoard(theBoard) #Draw out the final board(QW)
     print('Hooray! You have won the game!')
-    gameIsPlaying = False
+    gameIsPlaying = False #Stop the gameIsPlaying loop(QW)
    else:
     if isBoardFull(theBoard): #Check if the board is full, and thus a tie (QW)
      drawBoard(theBoard)
      print('The game is a tie!')
-     break
+     break #Stop the loop, thus ending the game(QW)
     else:
-     turn = 'computer' #If you haven't won nor is the game a tie, pass the turn to the computer (QW)
+     turn = 'computer' #If you haven't won or is the game a tie, pass the turn to the computer (QW)
 
   else:
    # Computer's turn
-   move = getComputerMove(theBoard, computerLetter)
+   #Everything below is a repeat of the previous code, just with the computers input and letter rather than the players (QW)
+   move = getComputerMove(theBoard, computerLetter) #Calls the getComputerMove to get the computer move (wow!) (QW)
    makeMove(theBoard, computerLetter, move)
 
    if isWinner(theBoard, computerLetter):
@@ -171,7 +172,7 @@ while True:
      print('The game is a tie!')
      break
     else:
-     turn = 'player'
+     turn = 'player' #Res
  print('Do you want to play again? (yes or no)') 
  if not input().lower().startswith('y'): #If no, run line 170. If yes, restart the loop and resume the game(QW)
   break #Breaks the while gameIsPlaying loop, this ending the game (QW)
