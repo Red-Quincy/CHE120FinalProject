@@ -1,15 +1,29 @@
  # Tic-Tac-Toe
-import random  #random is a package, the random value package, we have decleare this if we want to import the random package (RW) 
+import random  #random is a package, the random value package - for random numbers, we have decleare this if we want to import the random package (RW) 
 
 def drawBoard(board):
+ 
        # This function prints out the board that it was passed.
+  
        # "board" is a list of 10 strings representing the board (ignore index 0).
-      print(board[7] + '|' + board[8] + '|' + board[9]) #Each board[*] represents a spot on the tictactoe board. Currently, they are just empty spaces but will eventually correspond to a move made by the player/computer (QW)
-      print('-+-+-')
-      print(board[4] + '|' + board[5] + '|' + board[6])
-      print('-+-+-')
-      print(board[1] + '|' + board[2] + '|' + board[3])
+   
+       #Each board[*] represents a spot on the tictactoe board. Currently, they are just empty spaces but will eventually correspond to a move made by the player/computer (QW)
+    
+       #The board numbers correspond to the number pad on the keyboard. Hence why square 7, 8 ,9 are at top and square 1, 2, 3 are at the bottom. (RW) 
+       #Note, notation for squares is nxm, n = row, m = column.  (RW)
+     
+      print(board[7] + '|' + board[8] + '|' + board[9]) #Prints the top row in the console - of 3 squares in the 3x3 board. (RW)
+      
+      print('-+-+-')  #Prints a divider separating the 1st row (1x3) and 2nd row (1x3) in the console display. (RW) 
+      
+      print(board[4] + '|' + board[5] + '|' + board[6]) #Prints the middle row in the console - of 3 squares in the 3x3 board. (RW)
+      
+      print('-+-+-')  #Prints a divider separating the 2nd row (1x3) and the 3rd row (1x3) in the console display. (RW)
+      
+      print(board[1] + '|' + board[2] + '|' + board[3]) #Prints the bottom row in the console - of 3 squares in the 3x3 board. (RW)
+      
 def inputPlayerLetter():
+ 
       # Lets the player type which letter they want to be.
       # Returns a list with the player's letter as the first item and the computer's letter as the second.
       letter = ''
@@ -18,11 +32,14 @@ def inputPlayerLetter():
           letter = input().upper() # Formats the user input to be uppercase so that the program can properly compare values (QW)
 
       # The first element in the list is the player's letter; the second is the computer's letter.
+      
       if letter == 'X':
           return ['X', 'O']
       else:
          return ['O', 'X']
+       
 def whoGoesFirst():
+ 
       # Randomly choose which player goes first.
       if random.randint(0, 1) == 0:
           return 'computer'                              #Return the turn to computere. Computer plays first. (RW)
@@ -30,23 +47,26 @@ def whoGoesFirst():
           return 'player'                                #Else returns the turn to the player. Player plays first. (RW)
 
 def makeMove(board, letter, move): 
+ 
       board[move] = letter #Recall: board is the section of the tictactoe board. Here, that section is being assigned to the move (QW)
 
 def isWinner(bo, le):
+ 
       # Given a board and a player's letter, this function returns True if that player has won.
       # We use "bo" instead of "board" and "le" instead of "letter" so we don't have to type as much.
-      return ((bo[7] == le and bo[8] == le and bo[9] == le) or # Across the top
-      (bo[4] == le and bo[5] == le and bo[6] == le) or # Across the middle
-      (bo[1] == le and bo[2] == le and bo[3] == le) or # Across the bottom
-      (bo[7] == le and bo[4] == le and bo[1] == le) or # Down the left side
-      (bo[8] == le and bo[5] == le and bo[2] == le) or # Down the middle
-      (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
-      (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
-      (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
+   
+      return ((bo[7] == le and bo[8] == le and bo[9] == le) or # 3 across the top - 1st row (1x3)        (RW)
+      (bo[4] == le and bo[5] == le and bo[6] == le) or # 3 across the middle - 2nd row (1x3)             (RW)
+      (bo[1] == le and bo[2] == le and bo[3] == le) or # 3 across the bottom - 3rd row (1x3)             (RW)
+      (bo[7] == le and bo[4] == le and bo[1] == le) or # 3 down the left side - 1st column (3x1)         (RW)
+      (bo[8] == le and bo[5] == le and bo[2] == le) or # 3 down the middle - 2nd column (3x1)            (RW)
+      (bo[9] == le and bo[6] == le and bo[3] == le) or # 3 down the right side - 3rd column (3x1)        (RW)
+      (bo[7] == le and bo[5] == le and bo[3] == le) or # 3 diagonal, top left to bot right.              (RW)
+      (bo[9] == le and bo[5] == le and bo[1] == le)) # 3 Diagonal, bot left to top right.                (RW)
+   
       #This is accounting for all possible win scenarios for the player (QW)
+    
     #RAY ^^^^^^^^^^
-    
-    
     
 def getBoardCopy(board):
       # Make a copy of the board list and return it.
