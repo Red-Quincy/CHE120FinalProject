@@ -24,9 +24,11 @@ def drawBoard(board):
       
 def inputPlayerLetter():
  
-      # Lets the player type which letter they want to be.
+      # Prompts the player type which letter they want to be. X or 0. 
+  
       # Returns a list with the player's letter as the first item and the computer's letter as the second.
-      letter = ''
+   
+      letter = ''  #
       while not (letter == 'X' or letter == 'O'):
           print('Do you want to be X or O?')
           letter = input().upper() # Formats the user input to be uppercase so that the program can properly compare values (QW)
@@ -42,7 +44,7 @@ def whoGoesFirst():
  
       # Randomly choose which player goes first.
       if random.randint(0, 1) == 0:
-          return 'computer'                              #Return the turn to computere. Computer plays first. (RW)
+          return 'computer'                              #Return the turn to computer. Computer plays first. (RW)
       else:
           return 'player'                                #Else returns the turn to the player. Player plays first. (RW)
 
