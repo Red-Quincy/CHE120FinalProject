@@ -24,25 +24,25 @@ def drawBoard(board):
       
 def inputPlayerLetter():
  
-      # Prompts the player type which letter they want to be. X or 0. 
+      # Function prompts the player type which letter they want to be. X or 0. (RW)
   
-      # Returns a list with the player's letter as the first item and the computer's letter as the second.
+      # Returns a list with the player's letter as the first item and the computer's letter as the second. So player can always choose desired letter against AI. (RW)
    
-      letter = ''  #
-      while not (letter == 'X' or letter == 'O'):
-          print('Do you want to be X or O?')
+      letter = ''  #Sets up the variable 'letter' of type str. (RW)
+      while not (letter == 'X' or letter == 'O'):   #Evalulates whether   
+          print('Do you want to be X or O?')        #Prints question in console. (RW)     
           letter = input().upper() # Formats the user input to be uppercase so that the program can properly compare values (QW)
 
       # The first element in the list is the player's letter; the second is the computer's letter.
       
-      if letter == 'X':
-          return ['X', 'O']
+      if letter == 'X':           #If player chose 'X', then the computer gets '0'. (RW)
+          return ['X', 'O']   
       else:
-         return ['O', 'X']
+         return ['O', 'X']        #If player chose '0', then the computer gets 'x'. (RW)
        
 def whoGoesFirst():
  
-      # Randomly choose which player goes first.
+      # Randomly decides whether player of AI goes first. This is also why we import random (RW)
       if random.randint(0, 1) == 0:
           return 'computer'                              #Return the turn to computer. Computer plays first. (RW)
       else:
