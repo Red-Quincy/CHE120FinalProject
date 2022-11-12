@@ -29,8 +29,13 @@ def inputPlayerLetter():
       # Returns a list with the player's letter as the first item and the computer's letter as the second. So player can always choose desired letter against AI. (RW)
    
       letter = ''  #Sets up the variable 'letter' of type str. (RW)
-      while not (letter == 'X' or letter == 'O'):   #Evalulates whether variable letter is 'X' or '0', since it's empty the line above, this prompts the user to input their desired letter.   (RW)
-          print('Do you want to be X or O?')        #Prints question in console. (RW)     
+    
+      while not (letter == 'X' or letter == 'O'):  
+      
+      #Evalulates whether variable letter is 'X' or '0', since it's empty the line above, this prompts the user to input their desired letter.   (RW)
+      
+          print('Do you want to be X or O?')        #Prints question in console. (RW)   
+       
           letter = input().upper() # Formats the user input to be uppercase so that the program can properly compare values (QW)
 
       # The first element in the list is the player's letter; the second is the computer's letter.
