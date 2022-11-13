@@ -120,35 +120,35 @@ def getComputerMove(board, computerLetter): # THIS SPECIFIC FUNCTION IS XIUWEN
           boardCopy = getBoardCopy(board) # Create boardCopy from previous getBoardCopy function to implement into this loop. (XD)
           if isSpaceFree(boardCopy, i): # If the boardCopy space is free coressponding to "i", then move to next line. (XD)
               makeMove(boardCopy, computerLetter, i) # Make the coressponding space for given "i" equal to computerLetter. EX: If i = 3 and ComputerLetter = "X", then boardCopy(3) = "X". (XD)
-              if isWinner(boardCopy, computerLetter):
+              if isWinner(boardCopy, computerLetter): # Checks if the boardCopy[1-9] is equal to computerLetter, if yes, returns "i". (XD)
                   return i
 
       # Check if the player could win on their next move and block them.
- for i in range(1, 10):
-         boardCopy = getBoardCopy(board)
-         if isSpaceFree(boardCopy, i):
-             makeMove(boardCopy, playerLetter, i)
-             if isWinner(boardCopy, playerLetter):
+ for i in range(1, 10): # Loops i from 1 to 9. (XD)
+         boardCopy = getBoardCopy(board)  # Copies boardCopy from getBoardCopy function. (XD)
+         if isSpaceFree(boardCopy, i): # If the boardCopy space is free coressponding to "i", then move to next line. (XD)
+             makeMove(boardCopy, playerLetter, i) # Make the coressponding space for given "i" equal to playerLetter. EX: If i = 6 and playerLetter = "O", then boardCopy(6) = "O". (XD)
+             if isWinner(boardCopy, playerLetter): # Checks if the boardCopy[1-9] is equal to playerLetter, if yes return "i". (XD)
                  return i
 
-     # Try to take one of the corners, if they are free.
- move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
- if move != None:
+     # Try to take one of the corners, if they are free
+ move = chooseRandomMoveFromList(board, [1, 3, 7, 9]) # Makes computer choose from [1,3,7,9] randomly (XD)
+ if move != None: # If no no corners are available, return move. (XD)
          return move
 
      # Try to take the center, if it is free.
- if isSpaceFree(board, 5):
+ if isSpaceFree(board, 5): # Lets computer choose center if all corners are unavailable. (XD)
   return 5
 
      # Move on one of the sides.
-  return chooseRandomMoveFromList(board, [2, 4, 6, 8]) #THIS IS THE END OF XIUWEN's PART
+  return chooseRandomMoveFromList(board, [2, 4, 6, 8]) # Returns board[2,4,6,8] in a random order if middle and corners are all taken. (XD)
 
-def isBoardFull(board):
+def isBoardFull(board): 
      # Return True if every space on the board has been taken. Otherwise, return False.
-     for i in range(1, 10):
-         if isSpaceFree(board, i):
+     for i in range(1, 10): 
+         if isSpaceFree(board, i): # If variable "i" from 1 to 9 are all filled then return False. (XD)
              return False
-     return True
+     return True # returns True else wise. (XD)
 
 
 print('Welcome to Tic-Tac-Toe!') #This is the "start" of the program. Everything up to this point has been defining functions that will be used throughout the course of the game (QW)
