@@ -109,17 +109,17 @@ def chooseRandomMoveFromList(board, movesList):
 
 def getComputerMove(board, computerLetter): # THIS SPECIFIC FUNCTION IS XIUWEN
       # Given a board and the computer's letter, determine where to move and return that move.
- if computerLetter == 'X':
-          playerLetter = 'O' asdasdassadaaaaaaaaaaaaaaaaa
+ if computerLetter == 'X': 
+          playerLetter = 'O' # If computerLetter is going to be "X", then correspond playerLetter to "O"
  else:
-          playerLetter = 'X'
+          playerLetter = 'X' # If computerLetter is not "X", then playerLetter will be "X"
 
       # Here is the algorithm for our Tic-Tac-Toe AI:
       # First, check if we can win in the next move.
- for i in range(1, 10):
-          boardCopy = getBoardCopy(board)
-          if isSpaceFree(boardCopy, i):
-              makeMove(boardCopy, computerLetter, i)
+ for i in range(1, 10): # Loop "i" as the numbers 1 to 9 (range(1,10)) into this system. (XD)
+          boardCopy = getBoardCopy(board) # Create boardCopy from previous getBoardCopy function to implement into this loop. (XD)
+          if isSpaceFree(boardCopy, i): # If the boardCopy space is free coressponding to "i", then move to next line. (XD)
+              makeMove(boardCopy, computerLetter, i) # Make the coressponding space for given "i" equal to computerLetter. EX: If i = 3 and ComputerLetter = "X", then boardCopy(3) = "X". (XD)
               if isWinner(boardCopy, computerLetter):
                   return i
 
