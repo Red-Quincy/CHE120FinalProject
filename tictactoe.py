@@ -110,7 +110,7 @@ def chooseRandomMoveFromList(board, movesList):
 def getComputerMove(board, computerLetter): # THIS SPECIFIC FUNCTION IS XIUWEN
       # Given a board and the computer's letter, determine where to move and return that move.
  if computerLetter == 'X':
-          playerLetter = 'O'
+          playerLetter = 'O' asdasdassadaaaaaaaaaaaaaaaaa
  else:
           playerLetter = 'X'
 
