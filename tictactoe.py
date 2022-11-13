@@ -128,7 +128,7 @@ def getComputerMove(board, computerLetter): # THIS SPECIFIC FUNCTION IS XIUWEN
          boardCopy = getBoardCopy(board)  # Copies boardCopy from getBoardCopy function. (XD)
          if isSpaceFree(boardCopy, i): # If the boardCopy space is free coressponding to "i", then move to next line. (XD)
              makeMove(boardCopy, playerLetter, i) # Make the coressponding space for given "i" equal to playerLetter. EX: If i = 6 and playerLetter = "O", then boardCopy(6) = "O". (XD)
-             if isWinner(boardCopy, playerLetter): # Checks if the boardCopy[1-9] is equal to playerLetter, if yes return "i". (XD)
+             if isWinner(boardCopy, playerLetter): # Checks if the boardCopy[1,...,9] is equal to playerLetter, if yes return "i". (XD)
                  return i
 
      # Try to take one of the corners, if they are free
