@@ -78,7 +78,7 @@ def isWinner(bo, le):
 def getBoardCopy(board):
       # Make a copy of the board list and return it.
       boardCopy = []
-      for i in board:
+      for i in board: # Loops "i" for within the board, adding "i" to the list. (JH)
           boardCopy.append(i)
       return boardCopy
 
@@ -98,12 +98,12 @@ def chooseRandomMoveFromList(board, movesList):
       # Returns a valid move from the passed list on the passed board.
       # Returns None if there is no valid move.
       possibleMoves = []
-      for i in movesList:
-          if isSpaceFree(board, i):
-              possibleMoves.append(i)
+      for i in movesList: # Loops "i" within the movelist (JH)
+          if isSpaceFree(board, i): # If the board space is free in "i", then go to next line (JH)
+              possibleMoves.append(i) #add I to list possibleMoves (JH)
 
-      if len(possibleMoves) != 0:
-          return random.choice(possibleMoves)
+      if len(possibleMoves) != 0: # If the list has something in it, go to next line (JH)
+          return random.choice(possibleMoves) #return a random value within the list possibleMoves (JH)
       else:
           return None
 
