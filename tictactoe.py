@@ -222,3 +222,59 @@ print(" | |  |  | |  |  | | ")
 print("-+-+- | -+-+- | -+-+-")
 print(" | |  |  | |  |  | | ")
 print("******|*******|******")""" #just an idea for how to draw the bigger board
+
+  
+#gameOne = [" "]*10
+#gameTwo = [" "]*10
+#gameThree = [" "]*10
+#gameFour = [" "]*10
+#gameFive = [" "]*10
+#gameSix = [" "]*10
+#gameSeven = [" "]*10
+#gameEight = [" "]*10
+#gameNine = [" "]*10
+
+#games = [gameOne,gameTwo,gameThree,gameFour,gameFive,fiveSix,fiveSeven,gameEight,gameNine] 
+  
+  #startGame will be the choice of the game that we start in
+  #we are doing two player
+  # moveOne is the move by player one
+  # moveTwo is the move by player two
+  
+  #playerOneLetter
+  #playerTwoLetter
+  
+  #1. print the game
+  #2. print the game we're curruently playing in
+  #3. swap between games/play in the proper game
+  #4. local win conditions
+  #5. global win conditions
+  #6. Explanation of the game
+  #7. Starting the game
+  
+  #nextGame[moveOne] = playerOneLetter
+  #nextGame = (moveOne-1) 
+  
+  #nextGame = 5
+  #moveOne from player 
+  #play moveOne in nextGame - games[nextGame-1][moveOne] = playerOneLetter 
+  #change game - nextGame
+  
+  #moveTwo from player2
+  #play moveTwo in nextGame
+  #change game - reassign nextGame
+  
+  #moveOne from player 1
+  #play moveOne in nextGame
+  #ghange game - reassign nextGame
+  
+  
+  #isWinner(games[4],playerOneLetter)
+ 
+    
+    
+    
+    
+    
+    
+    
