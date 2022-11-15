@@ -245,12 +245,20 @@ print("******|*******|******")""" #just an idea for how to draw the bigger board
   #playerTwoLetter
   
   #1. print the game
-  #2. print the game we're curruently playing in
-  #3. swap between games/play in the proper game
-  #4. local win conditions
+  #2. print the game we're curruently playing in (RAY)
+  
+  
+  #3. swap between games/play in the proper game (XIUWEN)
+  
+  
+  #4. local win conditions (QUINN)
   #5. global win conditions
-  #6. Explanation of the game
-  #7. Starting the game
+  
+  
+  #7. Starting the game -while game is playing loop (JOHN)
+  
+  
+  
   
   #nextGame[moveOne] = playerOneLetter
   #nextGame = (moveOne-1) 
