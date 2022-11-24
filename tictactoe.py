@@ -251,6 +251,46 @@ print("******|*******|******")""" #just an idea for how to draw the bigger board
   #3. swap between games/play in the proper game (XIUWEN)
   
   
+  
+  
+games_list = ["gameOne","gameTwo","gameThree","gameFour","gameFive","gameSix","gameSeven","gameEight","gameNine"]
+
+def transition(game, move):
+
+    i = int(input("Which game do you want to start with game[1-9]:"))
+
+    if i <= 0 or i >= 10:
+        print("Input not valid, please input right number")
+        i = int(input("Which game do you want to start with game[1-9]:"))
+
+    else:
+        position = game[i-1]
+        print("You're opening position is in:", position)
+
+
+    for x in range(1,10):
+        if move in range(1,10):
+            if move == x:
+
+                new_position = game[move-1]
+                print("You're new position is in:", new_position)
+
+transition(games_list, 4)
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   #4. local win conditions (QUINN)
   #5. global win conditions
   
