@@ -267,15 +267,11 @@ def transition(game, move):
         position = game[i-1]
         print("You're opening position is in:", position)
 
+        new_position = game[move-1]
+        print("You're new position is in:", new_position)
 
-    for x in range(1,10):
-        if move in range(1,10):
-            if move == x:
 
-                new_position = game[move-1]
-                print("You're new position is in:", new_position)
-
-transition(games_list, 4)
+transition(games_list, 6)
 
   
   
