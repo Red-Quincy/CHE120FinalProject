@@ -264,14 +264,19 @@ def transition(game, move):
         i = int(input("Which game do you want to start with game[1-9]:"))
 
     else:
-        position = game[i-1]
-        print("You're opening position is in:", position)
+        current_position = game[i-1]
+        print("You're opening position is in:", current_position)
 
         new_position = game[move-1]
         print("You're new position is in:", new_position)
 
+    if move == i:
+        new_pos = int(input("Please Choose Another Game Board to Play on Other than this Game Board"))
+        new_position = game[new_pos-1]
+        print(new_position)
 
-transition(games_list, 6)
+
+transition(games_list, 1)
 
   
   
